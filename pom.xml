@@ -69,8 +69,21 @@
             <artifactId>jersey-media-json-jackson</artifactId>
             <version>3.1.3</version>
         </dependency>
-    </dependencies>
+        <!-- https://mvnrepository.com/artifact/jakarta.xml.bind/jakarta.xml.bind-api -->
+        <dependency>
+            <groupId>jakarta.xml.bind</groupId>
+            <artifactId>jakarta.xml.bind-api</artifactId>
+            <version>4.0.2</version>
+        </dependency>
+        <dependency>
+            <groupId>com.sun.xml.bind</groupId>
+            <artifactId>jaxb-impl</artifactId>
+            <version>4.0.5</version>
+            <scope>runtime</scope>
+        </dependency>
 
+
+    </dependencies>
     <build>
         <plugins>
             <plugin>

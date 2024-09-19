@@ -1,20 +1,22 @@
 package com.bank.app.rest;
 
-import jakarta.ws.rs.GET;
-import jakarta.ws.rs.HeaderParam;
-import jakarta.ws.rs.Path;
-import jakarta.ws.rs.QueryParam;
+import jakarta.ws.rs.*;
+
+import java.util.UUID;
 
 @Path("/hdfc/accounts")
 public class AccountService {
     @GET
-    public String getBalance(@QueryParam("account-no") String accountNo) {
-        return "Your balance :: " + 690000.0f + " in Account :: " + accountNo;
+    @Path("/{account-no}")
+    public String getBalance(@PathParam("account-no") String accountNo,
+                             @MatrixParam("mobile-no") String mobileNo,
+                             @CookieParam("account-holder-name") String accountHolderName) {
+        return "Your balance :: " + 690000.0f + " in Account :: " + accountNo+ " mobile no :: "+ mobileNo+ " account holder name :: " + accountHolderName;
     }
 
-    @GET
-    @Path("/mobile")
-    public String getBalance(@QueryParam("account-no") String accountNo, @QueryParam("mobile-no") String mobileNo) {
-        return "Your balance :: " + 690000.0f + " in Account :: " + accountNo+" and mobile Number :: " + mobileNo;
+    @POST
+    public String createAccount(AccountInfo accountInfo){
+        //Store in HDFC Accounts Database
+        return "Account created successfully with the accountNumber :: "+ UUID.randomUUID()+" for :: "+accountInfo.getAccountHolderName();
     }
 }
