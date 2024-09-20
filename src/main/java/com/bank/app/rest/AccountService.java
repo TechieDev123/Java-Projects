@@ -1,6 +1,8 @@
 package com.bank.app.rest;
 
+import com.bank.app.model.AccountInfo;
 import jakarta.ws.rs.*;
+import jakarta.ws.rs.core.MediaType;
 
 import java.util.UUID;
 
@@ -15,6 +17,7 @@ public class AccountService {
     }
 
     @POST
+    @Consumes({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
     public String createAccount(AccountInfo accountInfo){
         //Store in HDFC Accounts Database
         return "Account created successfully with the accountNumber :: "+ UUID.randomUUID()+" for :: "+accountInfo.getAccountHolderName();
