@@ -10,10 +10,11 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 public class AccountInfo {
+    private String accountNumber;
     private String accountHolderName;
     private String accountType;
     private String accountStatus;
-    private String bankName;
+    private String branch;
     private String phoneNumber;
     private String panCard;
     private Float balance;
