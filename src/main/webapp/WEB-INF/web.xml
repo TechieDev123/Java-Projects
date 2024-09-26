@@ -4,7 +4,7 @@
          xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd"
          version="6.0">
    <servlet>
-       <servlet-name>jersey</servlet-name>
+       <servlet-name>hdfc-bank-jersey</servlet-name>
        <servlet-class>org.glassfish.jersey.servlet.ServletContainer</servlet-class>
        <init-param>
            <param-name>jersey.config.server.provider.packages</param-name>
@@ -13,7 +13,7 @@
        <load-on-startup>1</load-on-startup>
    </servlet>
     <servlet-mapping>
-        <servlet-name>jersey</servlet-name>
-        <url-pattern>/api/*</url-pattern>
+        <servlet-name>hdfc-bank-jersey</servlet-name>
+        <url-pattern>/*</url-pattern>
     </servlet-mapping>
 </web-app>
